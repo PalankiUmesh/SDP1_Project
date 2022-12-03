@@ -28,16 +28,18 @@ def additem(request):
         return redirect("home")
     else:
         return render(request,'additem.html')
+
 @login_required(login_url='login')
 def biditem(request):
     id=request.GET['id']
     item = Item.objects.get(id=id)
     lstatus="live"
 
-    if item.status ==lstatus:
+    if item.status == lstatus:
         return render(request,"biditem.html",{'item':item})
     else:
         return redirect("home")
+
 @login_required(login_url='login')
 def validate(request):
     value = request.GET.get('bidrs')

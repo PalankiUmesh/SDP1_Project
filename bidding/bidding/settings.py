@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import pymysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,6 +84,17 @@ DATABASES = {
     }
 }
 
+# DATABASES= {
+#     'default' : {
+#         'ENGINE' : 'django.db.backends.mysql' ,
+#         'NAME' : 'BidOps',
+#         'USER' : 'root',
+#         'PASSWORD' : 'Umesh308',
+#         'HOST': '127.0.0.1' ,
+#         'PORT' : '3306' ,
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -126,7 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' 
 EMAIL_USE_TLS = True  
 EMAIL_USE_SSL =False
-EMAIL_HOST = 'smtp.gmail.com'  
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'palankiumesh@gmail.com'
 EMAIL_HOST_PASSWORD = "uvsatedzyzvlrahx"

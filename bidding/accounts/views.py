@@ -64,9 +64,6 @@ def register(request):
     else:
         return render(request,'register.html')
 
-
-
-
 @login_required(login_url='login')
 def sendMailTowinners(request):
     today = date.today()
@@ -123,8 +120,6 @@ def sendMailTowinners(request):
             i.save()
         except:
             pass
-
-
 
 @login_required(login_url='login')
 def pastConfigurations(request):
